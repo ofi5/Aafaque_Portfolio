@@ -1,0 +1,27 @@
+.section{
+    padding:100px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &.dark{
+        background-color: black;
+
+    }
+    &.light{
+        background-color: blue;
+    }
+    .content{
+        width: 1200px;
+        padding: 0 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .section-title {
+            width: 100%;
+            text-align: center;
+            color: aliceblue;
+            max-width: 500px;
+        }
+    }
+}

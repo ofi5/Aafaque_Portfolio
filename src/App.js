@@ -2,6 +2,8 @@ import React from 'react'
 
 import Intro from "./components/intro"
 
+import Skills from './components/skills'
+
 import "./app.css"
 
 
@@ -9,7 +11,10 @@ import "./app.css"
 
 const App = () => {
   return (
-    <div>App<Intro/></div>
+    <div>
+      <Intro/>
+      <Skills/>
+      </div>
   )
 }
 

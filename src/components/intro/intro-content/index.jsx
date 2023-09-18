@@ -12,7 +12,6 @@ const IntroContent = () => {
     
     <div className="intro-content">
         <div className="layout">
-            
             <div className="left-col">
               <h1 className='title'>
                   <span className="small-text">
@@ -27,7 +26,7 @@ const IntroContent = () => {
                   </span>
                 </h1>    
                 <p>
-                  LOREM IPSUM
+                  Lorem Ipsumdasd
                 </p>
                 <CallToAction text="Contact Me"/>
             </div>
@@ -47,6 +46,7 @@ const IntroContent = () => {
                 </div>
                 <div className="text">
                   <span>4k+</span>
+                  Happy customers
 
                 </div>
               </div>

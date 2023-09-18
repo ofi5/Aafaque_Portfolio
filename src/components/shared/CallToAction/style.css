@@ -15,10 +15,21 @@
     margin: 5px;
     
     .text,
-    .arrow-icon {
+    .arrow-icon,
+    icon {
         position: relative;
         z-index: 1;
         transition: all ease 500ms;
+    }
+    .icon{
+        width: 21px;
+        height: 21px;
+        background-color: rgb(223, 223, 39);
+        border-radius: 41px;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        font-size: 12px;
     }
     &:before {
         content:"";
@@ -37,9 +48,9 @@
             transform: translateX(0);
         }
         .text,
-        .arrow-icon {
+        .arrow-icon,.icon{
         
-            background: rgb(255, 251, 7);
+            background: rgb(255, 255, 250);
             color: rgb(134, 47, 240);
             border-radius: 30px;
             padding: 1px;
