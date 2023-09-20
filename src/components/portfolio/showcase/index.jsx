@@ -1,9 +1,23 @@
 import React from 'react'
+import Arrow from '../../shared/arrow' 
+import './style.css'
 
 const Showcase = ({data,transition}) => {
   return (
     <div className='project-showcase'>
-        {}
+        {data.map((project)=>(
+            <div className="showcase-item">
+                <div className="meta-content">
+                     <h3>{project.name}</h3>
+                     <div className="go-to-cta">
+                        <span className="text">Project Details</span>
+                        <Arrow/>
+                     </div>
+                </div>
+                <img src={project.media.thumbnail}/>
+            </div>
+
+        ))}
     </div>
   )
 }
