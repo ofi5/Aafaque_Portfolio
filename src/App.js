@@ -6,7 +6,10 @@ import Skills from './components/skills'
 
 import Portfolio from './components/portfolio'
 
+
+
 import "./app.css"
+import Blogs from './components/blogs'
 
 
 
@@ -17,6 +20,7 @@ const App = () => {
       <Intro/>
       <Skills/>
       <Portfolio/>
+      <Blogs/>
       </div>
   )
 }
