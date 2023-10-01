@@ -2,17 +2,30 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 538px;
+    height: 338px;
     width: calc(100%/3);
     border-radius: 16px;
     overflow: hidden;
+    border: solid red 2px;
     margin-right: 20px;
     cursor: pointer;
+    &:hover{
+        .image-section{
+            transform: scale(1.2);
+        }
+        .content-section{
+            background-color: rgb(196, 10, 10);
+            color: white;
+            p{
+                color:rgb(71, 129, 87) ;
+            }
+        }
+    }
 }
 
 .image-section{
     width: 100%;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     /* transition ease */
     img{
@@ -25,13 +38,15 @@
 }
 
 .content-section{
-    display: flex;
-    flex-direction: column;
+    border: solid 2px green;
+    /* display: flex; */
+    /* flex-direction: column; */
+    justify-content: center;
     padding: 30px;
     padding-bottom: 55px;
     position: relative;
     flex-grow: 1;
-    background-color: antiquewhite;
+    background-color: rgb(94, 71, 41);
     /* transiton-ease */
     h3{
         margin-bottom: 10px;
@@ -46,18 +61,28 @@
     .readmore-cta{
         display: flex;
         align-items: center;
-        
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        cursor: pointer;
+        .text{
+            font-size: 18px;
+            /* typo */
+        }
+
     }
 }
 
 .info-bar{
     display: flex;
+    border: solid 2px yellow;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
 }
 
 .user-name, .posted-date{
+    font-size: 28px;
     /* typo */
 
 }

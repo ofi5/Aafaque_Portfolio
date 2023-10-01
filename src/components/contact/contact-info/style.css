@@ -1,0 +1,24 @@
+.contact-info-box{
+    background-color: black;
+    width: 355px;
+    padding: 30px;
+    border-radius: 6px;
+    color: grey;
+    h4{
+        line-height: 34px;
+        margin-bottom: 20px;
+    }
+    .contact-option{
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        svg{
+            color: yellow;
+            font-size: 16px;
+        }
+        .text{
+            color: white;
+            margin-left: 10px;
+        }
+    }
+}

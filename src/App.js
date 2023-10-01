@@ -6,6 +6,10 @@ import Skills from './components/skills'
 
 import Portfolio from './components/portfolio'
 
+import Contact from './components/contact'
+
+import Footer from './components/footer'
+
 
 
 import "./app.css"
@@ -21,6 +25,8 @@ const App = () => {
       <Skills/>
       <Portfolio/>
       <Blogs/>
+      <Contact/>
+      <Footer/>
       </div>
   )
 }

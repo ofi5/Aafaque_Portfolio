@@ -1,6 +1,8 @@
 import React from 'react'
 
-import Arrow from "../../shared/arrow"
+// import Arrow from "../../shared/arrow"
+
+import "./style.css"
 
 
 const BlogCard = ({user,date,image,title,description}) => {
@@ -21,7 +23,7 @@ const BlogCard = ({user,date,image,title,description}) => {
             <p>{description}</p>
             <div className="readmore-cta">
                 <span className="text">read more</span>
-                <Arrow/>
+                {/* <Arrow/> */}
             </div>
         </div>
     </div>
