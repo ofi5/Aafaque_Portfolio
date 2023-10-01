@@ -11,11 +11,12 @@ import Showcase from './showcase'
 const projectsData = [
     {
         id: 1,
-        name: "Healthy Food Restraunt",
+        name: "Password Generator",
         tags: ["web-app", "mobile-app"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-7.jpg"),
+            thumbnail: require("../../images/portfolio/pg.png"),
         },
+        lnk:"https://ofi5.github.io/password_generator.github.io/"
     },
     {
         id: 2,

@@ -3,8 +3,8 @@
     height: 47px;
     width:fit-content;
     padding: 0 15px;
-    background: whitesmoke;
-    border-radius: 7px;
+    background: rgb(165, 139, 236);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@
     .icon{
         width: 21px;
         height: 21px;
-        background-color: rgb(223, 223, 39);
+        background-color: rgb(16, 3, 135);
         border-radius: 41px;
         display: flex;
         align-items: center;
@@ -37,7 +37,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: yellow;
+        background-color: rgb(255, 255, 255);
         z-index: 0;
         transform:translateX(-100%);
         transition: all 500ms cubic-bezier(0.55,0.055,0.675,0.19);
@@ -50,10 +50,10 @@
         .text,
         .arrow-icon,.icon{
         
-            background: rgb(255, 255, 250);
-            color: rgb(134, 47, 240);
+            background: rgb(24, 2, 166);
+            color: rgb(251, 251, 251);
             border-radius: 30px;
-            padding: 1px;
+            padding: 4px;
         }
     } 
 

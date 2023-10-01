@@ -2,7 +2,11 @@
     flex-grow:1;
     display:flex;
     align-items: flex-end;
-    .layout {
+    border: solid 2px red;
+    padding-bottom: 150px;
+    color: white;
+    .layout{
+        background: solid 20px orange;
         display: flex;
         .left-col {
             width:45%;
@@ -33,7 +37,7 @@
                     font-size: 62px;
                     font-weight: 400;
                     line-height: 72px;
-                    color: red;
+                    color: rgb(185, 156, 229);
                 }
 
             }

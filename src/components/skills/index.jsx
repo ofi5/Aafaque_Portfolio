@@ -23,7 +23,9 @@ const Skills = () => {
                      <p>
                         Lorem ipsum
                     </p>
-            <CallToAction text="resume" icon = {<AiOutlineCloudDownload/>}/>
+            <p className="resbutton">        
+                <CallToAction text="resume" icon = {<AiOutlineCloudDownload/>}/>
+            </p>
              </div>
         </div>   
 

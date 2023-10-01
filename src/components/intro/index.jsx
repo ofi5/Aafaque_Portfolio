@@ -2,6 +2,7 @@ import React from 'react'
 import IntroContent from "./intro-content";
 import cloud from "../../images/cloud.png"
 import cloudsoft from "../../images/cloud-soft.png"
+import stars from "../../images/stars.jpg"
 
 import "./style.css"
 import Navigation from "./navigation-bar"

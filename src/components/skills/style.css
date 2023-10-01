@@ -1,6 +1,9 @@
 .skills-content-wrapper{
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    border: solid 2px green;
+
     .left-col {
         
         width: 40%;
@@ -8,30 +11,43 @@
         align-items: center;
         
         justify-content: flex-start;
+        
       
 
     }
 
     #jsImage {
-        width: 100%;
+        width: 120%;
         max-width: 453px;
         display: block;
+        border: solid 2px red;
     
     }
 
     .right-col {
-        
-        width: 60%;
+        border: solid 2px blue;
+        width: 80%;
         color: aliceblue;
         margin-left: 70px;
-        h2{
-            margin-bottom: 30px;
-        }
-        p{
-            font: 400 18px;
-            line-height: 24px;
-            margin-bottom: 15px;
-        }
+        text-align: center;
+        
     }
 }
 
+h2{
+    margin-bottom: 30px;
+}
+p{
+    font: 400 18px;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.resbutton{
+    margin: auto;
+    border: solid 2px red;
+    align-items: center;
+    text-align: center;
+
+
+}
