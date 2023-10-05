@@ -11,7 +11,7 @@ import Showcase from './showcase'
 const projectsData = [
     {
         id: 1,
-        name: "Password Generator",
+        name: "Passworddd Generator",
         tags: ["web-app", "mobile-app"],
         media: {
             thumbnail: require("../../images/portfolio/pg.png"),
@@ -107,12 +107,13 @@ const Portfolio = () => {
         title='My Portfolio'
         background="light"
         >
-            <div className="portfolio-content-wrapper"></div>
+            <div className="portfolio-content-wrapper">
         <Filters filterProjects={(tag)=>filterProjects(tag)}/>
         <Showcase 
             data = {projects}
             transition = {transition} 
         />
+        </div>
     </Section>
   )
 }

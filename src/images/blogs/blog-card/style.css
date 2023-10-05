@@ -1,88 +1,110 @@
-.blog-card{
-    display: flex;
+
+.blog-card {
+    border: solid 3px red;
+    /* display: flex; */
     flex-direction: column;
     align-items: flex-start;
-    height: 338px;
-    width: calc(100%/3);
+    height: 100%;
+    width: calc(100% / 3);
     border-radius: 16px;
     overflow: hidden;
-    border: solid red 2px;
     margin-right: 20px;
     cursor: pointer;
-    &:hover{
-        .image-section{
+    .image-section {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        /* @include transition-ease; */
+        transition: all 200ms ease-in-out;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+    }
+    .content-section {
+
+        transform: scale(1.2);
+        
+        border: solid 2px green;
+        /* display: flex; */
+        /* width: max-content; */
+
+
+
+        /* flex-direction: column; */
+        padding: 30px;
+        
+        padding-bottom: 55px;
+        /* position: relative; */
+        flex-grow: 1;
+        background-color: rgb(123, 50, 50);
+        transition: all 200ms ease-in-out;
+        .info-bar {
+            border: red 3px solid;
+            background-color: bisque;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            .user-name,
+            .posted-date {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+        
+        .readmore-cta {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            cursor: pointer;
+            .text {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &:hover {
+        .image-section {
             transform: scale(1.2);
         }
-        .content-section{
-            background-color: rgb(196, 10, 10);
+        .content-section {
+            background-color: black;
             color: white;
-            p{
-                color:rgb(71, 129, 87) ;
+            p {
+                color: white;
             }
         }
     }
 }
 
-.image-section{
-    width: 100%;
-    height: 200px;
+.head3 {
+    background-color: aquamarine;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    /* transition ease */
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-    }
+    text-overflow: ellipsis;
 }
+.para1 {
 
-.content-section{
-    border: solid 2px green;
-    /* display: flex; */
-    /* flex-direction: column; */
-    justify-content: center;
-    padding: 30px;
-    padding-bottom: 55px;
-    position: relative;
-    flex-grow: 1;
-    background-color: rgb(94, 71, 41);
-    /* transiton-ease */
-    h3{
-        margin-bottom: 10px;
-        /* typo */
-       
-        /* ellipses */
-    }
-    p{
-        color: black;
-        /* elipses */
-    }
-    .readmore-cta{
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 30px;
-        left: 30px;
-        cursor: pointer;
-        .text{
-            font-size: 18px;
-            /* typo */
-        }
-
-    }
-}
-
-.info-bar{
-    display: flex;
-    border: solid 2px yellow;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.user-name, .posted-date{
-    font-size: 28px;
-    /* typo */
-
+    background-color: aqua;
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
