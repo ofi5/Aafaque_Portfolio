@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-    FaYoutube,
+    FaTwitter,
     FaGithub,
     FaLinkedinIn,
     FaStackOverflow,
@@ -20,15 +20,16 @@ import "./style.css"
 const Footer = () => {
   return (
     <Section
-            background="light"
+            background="dark"
             className="footer"
+
         >
             <div className="footer-content-wrapper">
                 <div className="footer-logo">
-                    <img
+                    {/* <img
                         src={Logo}
                         alt="JS Dev Hindi"
-                    />
+                    /> */}
                 </div>
                 <ul className="footer-menu-items">
                     <li
@@ -57,31 +58,31 @@ const Footer = () => {
                     </li>
                 </ul>
                 <div className="social-icons">
-                    <SocialIcon
-                        color="#FF0000"
-                        icon={<FaYoutube />}
-                        link="https://www.youtube.com"
-                    />
+                    
+                    
                     <SocialIcon
                         color="#0D2636"
                         icon={<FaGithub />}
+                        link="https://github.com/ofi5"
                     />
                     <SocialIcon
                         color="#0A66C2"
                         icon={<FaLinkedinIn />}
+                        link="https://www.linkedin.com/in/aafaque-rasheed/"
                     />
                     <SocialIcon
                         color="#f2740d"
-                        icon={<FaStackOverflow />}
+                        icon={<FaTwitter />}
+                        link="https://twitter.com/AafaqueRasheed"
                     />
-                    <SocialIcon
+                    {/* <SocialIcon
                         color="#E84C88"
                         icon={<FaInstagram />}
-                    />
+                    /> */}
                 </div>
                 <div className="bottom-bar">
                     <div className="copyright-text">
-                        Copyright 2022 JS Dev Hindi | All Rights Reserved
+                        Aafaque Rasheed, UTD, Information Technology and Management 
                     </div>
                 </div>
             </div>

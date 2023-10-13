@@ -21,8 +21,8 @@
         align-items: center;
         margin-top: 30px;
         .footer-menu-item {
-            @include typography(18px, 400, 22px);
-            color: $white;
+            
+            color: white;
             margin: 0 12.5px;
             cursor: pointer;
             &:hover {
@@ -41,7 +41,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: $white;
+            color: white;
             font-size: 18px;
             margin: 0 12.5px;
             cursor: pointer;
@@ -61,7 +61,7 @@
         margin-top: 75px;
         .copyright-text {
             color: #777777;
-            @include typography(14px, 400, 22px);
+            
         }
     }
 }

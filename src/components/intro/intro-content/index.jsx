@@ -9,6 +9,7 @@ import { BsAwardFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { scrollToSection } from '../../utils/helpers';
 import utdLogo from '../../../images/utdLogo.webp'
+import mahe from '../../../images/portfolio/mahe.png'
 
 const IntroContent = () => {
   return (
@@ -17,27 +18,25 @@ const IntroContent = () => {
         <div className="layout">
             <div className="left-col">
               <h1 className='title'>
-                  <span className="small-text">
-                    <span className="text">Hello</span>
-                    <span className="icon">
-                      <img src = {hand}/>
-                    </span>
-                    <span className="text"></span>
-                  </span>
+                  
+                  
+             
+
                   <span className="big-text">
                   Welcome to my Portfolio
                   </span>
                 </h1>    
-                <p>
+                <p className='myintro'>
                 My name is Aafaque Rasheed and I am currently pursuing Masters at University of Texas, Dallas in Information, Technology and Management. I am an aspiring fullstack developer and heres a showcase of my projects.
                 </p>
-                <CallToAction text="Contact Me" action = {()=>scrollToSection("contact")}/>
+                
+                {/* <CallToAction text="Contact Me" action = {()=>scrollToSection("contact")}/> */}
             </div>
             
             <div className="right-col">
               {/* <img src={utdLogo}/> */}
-             
-              <div className="highlights horizontal">
+             <div className='highlights vertical'>
+              {/* <div className="highlights horizontal"> */}
                 <div className="icon">
                   <img src={utdsmall} alt="utdLogo" />
                 </div>
@@ -45,10 +44,10 @@ const IntroContent = () => {
               </div>
               <div className="highlights vertical">
                 <div className="icon">
-                  <FaUser/>
+                <img src={mahe} alt="mahe" />
                 </div>
                 <div className="text">
-                  <span></span>
+                  <span>Bachelors of Technology in Civil Engineering</span>
                  
                 </div>
               </div>

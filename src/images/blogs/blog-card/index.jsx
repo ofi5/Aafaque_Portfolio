@@ -1,8 +1,13 @@
 import React from "react";
 
-// import Arrow from "../../shared/arrow";
+import Arrow from "../../../components/shared/arrow";
 
 import "./style.css";
+
+const handleClick = () => {
+    
+}
+
 
 const BlogCard = ({ user, date, image, title, description }) => {
     return (
@@ -18,15 +23,14 @@ const BlogCard = ({ user, date, image, title, description }) => {
                     <div className="user-name">By {user}</div>
                     <div className="posted-date">{date}</div>
                 </div>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <div className="readmore-cta">
-                    <span className="text">Read More</span> 
-                    
-                    {/* <Arrow /> */}
-                </div>
+                <h4 className="head4">{title}</h4>
+                <p className="para2">{description}</p>
+                <button>Read More</button>
+        
             </div>
+            
         </div>
+        
     );
 };
 

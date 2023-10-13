@@ -1,6 +1,7 @@
 
 .blog-card {
-    border: solid 3px red;
+    color: bisque;
+    border: solid 3px white;
     /* display: flex; */
     flex-direction: column;
     align-items: flex-start;
@@ -27,9 +28,63 @@
     }
     .content-section {
 
-        transform: scale(1.2);
+        .para2 {
+            margin: 20px;
+            /* background-color: aqua; */
+            text-align: center;
+            /* border: solid 2px green; */
+            font-size: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         
-        border: solid 2px green;
+           
+        }
+
+        .head4 {
+    
+   
+            /* background-color: aquamarine; */
+            margin: auto;
+            /* border: solid 2px green; */
+            text-align: center;
+            padding: 0px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .read{
+            text-align: center;
+            background-color: black;
+            border-radius: 5px;
+            border: solid 1px green;
+            &:hover {
+                
+                
+                    background-color: green;
+                    color: rgb(0, 0, 0);
+                    border: solid grey 1px;
+                    border-radius: 3px;
+                
+                }
+            }
+        
+        
+
+        transform: scale(1.2);
+        &:hover {
+        
+            transform: scale(1.2);
+          
+        
+    }    
+        
+        /* border: solid 2px green; */
         /* display: flex; */
         /* width: max-content; */
 
@@ -41,25 +96,36 @@
         padding-bottom: 55px;
         /* position: relative; */
         flex-grow: 1;
-        background-color: rgb(123, 50, 50);
+        background-color: rgb(44, 44, 44);
         transition: all 200ms ease-in-out;
         .info-bar {
-            border: red 3px solid;
-            background-color: bisque;
+            /* transform: scale(0.8); */
+            /* border: red 3px solid; */
+            /* background-color: bisque; */
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             margin-bottom: 20px;
             .user-name,
             .posted-date {
+                margin: 0%;
+                padding: 5px;
                 font-style: normal;
                 font-weight: 400;
-                font-size: 18px;
+                font-size: 15px;
                 line-height: 24px;
+            
+            }
+            &:hover {
+                 
+                    transform: scale(1.1);
             }
         }
         
         .readmore-cta {
+            
+            
+            text-align: center;
             display: flex;
             align-items: center;
             position: absolute;
@@ -67,6 +133,8 @@
             left: 30px;
             cursor: pointer;
             .text {
+                border: solid black 2px;
+                
                 font-style: normal;
                 font-weight: 400;
                 font-size: 18px;
@@ -78,33 +146,16 @@
     &:hover {
         .image-section {
             transform: scale(1.2);
+            color: rgb(151, 39, 39);
         }
         .content-section {
-            background-color: black;
-            color: white;
-            p {
+            background-color: rgb(255, 255, 255);
+            color: green;
+            /* p {
                 color: white;
-            }
+            } */
         }
     }
 }
 
-.head3 {
-    background-color: aquamarine;
-    margin-bottom: 10px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.para1 {
 
-    background-color: aqua;
-    color: black;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}

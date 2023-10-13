@@ -6,16 +6,20 @@ import ContactInfo from './contact-info'
 import Form from './form'
 const Contact = () => {
   return (
+    <div className="box1">
     <Section
         id="contact"
-        title="Any Qusetions? Fell free to contact"
-        background="light"
+        title="Any Questions? Feel free to contact"
+
+        
+        
         >
         <div className="contact-content-wrapper">
         <ContactInfo/>
         <Form/>
         </div>
     </Section>
+    </div>
   )
 }
 

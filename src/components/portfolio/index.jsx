@@ -10,8 +10,8 @@ import Showcase from './showcase'
 
 const projectsData = [
     {
-        id: 1,
-        name: "Passworddd Generator",
+        id: 2,
+        name: "Password Generator",
         tags: ["web-app", "mobile-app"],
         media: {
             thumbnail: require("../../images/portfolio/pg.png"),
@@ -19,60 +19,67 @@ const projectsData = [
         lnk:"https://ofi5.github.io/password_generator.github.io/"
     },
     {
-        id: 2,
-        name: "Anna & Daniel",
+        id: 1,
+        name: "Generic Pizza Website",
         tags: ["web-page"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-2.jpg"),
+            thumbnail: require("../../images/portfolio/pizza.png"),
         },
+        lnk:"https://ofi5.github.io/Pizza_Delivery_website.github.io/"
     },
     {
         id: 3,
-        name: "Web Design Landing Page",
+        name: "Fun with Triangles",
         tags: ["web-page"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-8.jpg"),
+            thumbnail: require("../../images/portfolio/triangle.png"),
         },
+        lnk:"https://inspiring-cocada-d7b302.netlify.app/"
     },
     {
         id: 4,
-        name: "Business Analytics Web App",
+        name: "Unit Converter ",
         tags: ["web-app", "mobile-app"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-1.jpg"),
+            thumbnail: require("../../images/portfolio/Converter.png"),
         },
+        lnk:"https://ofi5.github.io/metric_unit_converter.github.io/"
     },
     {
         id: 5,
-        name: "Limitless",
+        name: "Song Recommender",
         tags: ["web-app", "web-page"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-6.jpg"),
+            thumbnail: require("../../images/portfolio/song.png"),
         },
+        lnk:"https://0q8by5.csb.app/"
     },
     {
         id: 6,
-        name: "Dashboard",
+        name: "Cash Register",
         tags: ["product", "web-app", "mobile-app"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-4.jpg"),
+            thumbnail: require("../../images/portfolio/cash.png"),
         },
+        lnk:"https://6328c915a42023113f60afbf--delightful-semifreddo-69ba95.netlify.app/"
     },
     {
         id: 7,
-        name: "Digital Creative Agency",
+        name: "Stock Estimator",
         tags: ["web-app"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-3.jpg"),
+            thumbnail: require("../../images/portfolio/stock.png"),
         },
+        lnk:"https://6327babc5ddea727d5b61643--snazzy-unicorn-66dc54.netlify.app/"
     },
     {
         id: 8,
-        name: "Virtual Reality Experience",
+        name: "Football Quiz",
         tags: ["web-app", "mobile-app", "web-page"],
         media: {
-            thumbnail: require("../../images/portfolio/thumb-5.jpg"),
+            thumbnail: require("../../images/portfolio/quiz.png"),
         },
+        lnk:"https://replit.com/@ofi5/My-football-quiz?embed=1&ouput=1#index.js"
     },
 ]
 
@@ -105,7 +112,7 @@ const Portfolio = () => {
     <Section 
         id="portfolio"
         title='My Portfolio'
-        background="light"
+        background="dark"
         >
             <div className="portfolio-content-wrapper">
         <Filters filterProjects={(tag)=>filterProjects(tag)}/>

@@ -1,43 +1,44 @@
-import React from 'react'
+import React from "react";
 
-import {send} from "emailjs-com";
-import {useForm} from "react-hook-form"
-import { ToastContainer, toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css"
+import { send } from "emailjs-com";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import "./style.css"
-
-
-
+import "./style.css";
 
 const Form = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors }
+        formState: { errors },
     } = useForm();
 
     const onSubmit = (data) => {
-        send("service_t3awz7j","template_ek40ldl",data,"wF04i0FgL3MgmQ8Sx")
-        .then((response) => {
-            console.log("Success",response.status,response.text);
-            formSuccess();
-        })
-        .catch((err)=>{
-            console.log("failed",err)
-        })
-    }
-
+        send(
+            "service_t3awz7j",
+            "template_ek40ldl",
+            data,
+            "wF04i0FgL3MgmQ8Sx"
+            )
+            .then((response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                formSuccess();
+            })
+            .catch((err) => {
+                console.log("FAILED...", err);
+            });
+    };
 
     const formSuccess = () => {
-        toast("Thanks for submitting your Query!")
-        document.getElementById("queryForm").reset()
-    }
+        toast("Thanks for submitting your Query!");
+        document.getElementById("queryForm").reset();
+    };
 
     return (
         <div className="query-form">
-            <ToastContainer/>
-            <form 
+            <ToastContainer />
+            <form
                 id="queryForm"
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -46,12 +47,12 @@ const Form = () => {
                         type="text"
                         name="from_name"
                         placeholder="Name"
-                        {...register("from-name",{
-                            required:"Name is required"
+                        {...register("from_name", {
+                            required: "Name is required",
                         })}
                     />
                     {errors.from_name?.message && (
-                        <p className="errors">{errors.from_name?.message}</p>
+                        <p className="error">{errors.from_name?.message}</p>
                     )}
                 </div>
 
@@ -60,17 +61,16 @@ const Form = () => {
                         type="text"
                         name="reply_to"
                         placeholder="Email"
-                        {...register("reply_to",{
-                            required:"Email is required",
-                            minLength: {
-                                value: /^[A-Z0-9/%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                message: "Invalid email address"
+                        {...register("reply_to", {
+                            required: "Email is required",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Invalid email address",
                             },
-
                         })}
                     />
                     {errors.reply_to?.message && (
-                        <p className="errors">{errors.reply_to?.message}</p>
+                        <p className="error">{errors.reply_to?.message}</p>
                     )}
                 </div>
 
@@ -88,26 +88,25 @@ const Form = () => {
                         })}
                     />
                     {errors.phone_number?.message && (
-                        <p className="errors">{errors.phone_number?.message}</p>
+                        <p className="error">{errors.phone_number?.message}</p>
                     )}
                 </div>
 
                 <div className="input-field">
                     <input
                         type="text"
-                        name="phone_no"
-                        placeholder="phone"
-                        {...register("phone_number",{
-                            required:"Phone number is required",
-                            pattern:{
+                        name="subject"
+                        placeholder="Subject"
+                        {...register("subject", {
+                            required: "Subject is required",
+                            minLength: {
                                 value: 10,
-                                message: "minimum 10 character required"
+                                message: "Minimum 10 characters required",
                             },
-
                         })}
                     />
                     {errors.subject?.message && (
-                        <p className="errors">{errors.subject?.message}</p>
+                        <p className="error">{errors.subject?.message}</p>
                     )}
                 </div>
 
@@ -116,30 +115,27 @@ const Form = () => {
                         className="textarea"
                         name="message"
                         placeholder="Your message"
-                        {...register("Your message",{
-                            required:"Message is required",
+                        {...register("message", {
+                            required: "Message is required",
                             minLength: {
                                 value: 20,
-                                message: "Minimum 20 characters required"
+                                message: "Minimum 20 characters required",
                             },
-
                             maxLength: {
                                 value: 500,
-                                message: "Maximum 500 character allowed"
+                                message: "Maximum 500 characters allowed",
                             },
-
                         })}
                     />
                     {errors.message?.message && (
-                        <p className="errors">{errors.message?.message}</p>
+                        <p className="error">{errors.message?.message}</p>
                     )}
                 </div>
 
-                <button type='submit'>Submit</button>
+                <button className="formbutton" type="submit">Submit</button>
             </form>
         </div>
-    )
+    );
+};
 
-}
-
-export default Form
+export default Form;

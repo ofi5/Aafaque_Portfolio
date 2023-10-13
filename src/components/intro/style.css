@@ -1,11 +1,11 @@
 .Intro-section {
 
     width: 100%;
-    border: solid 2px yellow;
+    /* border: solid 2px yellow; */
     
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(121deg, #2559cd 9%, #1c4cc8 41%, #0f38c1 80%);
+    background: linear-gradient(121deg, #231e7a 9%, #000000 41%, #4b07c2 80%);
     position: relative;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
         mix-blend-mode: soft-light;
     }
     .content {
-        border: solid 2px green;
+        /* border: solid 2px green; */
         width: 1200px;
         padding:0 20px;
         position: relative;

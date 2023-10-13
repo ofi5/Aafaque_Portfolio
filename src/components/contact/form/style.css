@@ -1,12 +1,18 @@
 .query-form {
-    width: calc(100%);
+    color: rgb(104, 104, 104);
+    width: 100%;
     margin-left: 20px;
-    background-color: black;
-   
+    background-color: rgb(0, 0, 0);
+    border-radius: 16px;
+    
     .input-field {
-        width: calc(50% - 20px);
+        width: 50%;
         margin: 10px;
-        border-radius: 5px;
+        border-radius: 16px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;  
+        /* background-color: beige; */
         &.full-width {
             width: 100%;
         }
@@ -19,47 +25,45 @@ form {
     flex-flow: row wrap;
     margin: 10px;
     justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    border-radius: 16px;
 }
 
-button {
-    outline: 0;
-    border: 0;
-    width: 90px;
-    height: 47px;
-    background: white;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-        
-    margin-left: 10px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+
 
 input {
     width: 85%;
     height: 57px;
-    
+    /* border: solid 2px grey; */
+    border: solid 2px rgb(59, 55, 55);
+   
     border-radius: 6px;
-    background-color: transparent;
+    background-color: rgb(200, 200, 200);
     outline: 0;
     padding: 10px 20px;
-    color: white;
+    color: rgb(41, 56, 135);
     font-size: 18px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 24px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
     
     
     &:focus {
-        border-color: white;
+        border-color: rgb(31, 45, 234);
     }
 }
 
 .textarea {
-    width: 95%;
-    height: 150px;
     
+    
+    height: 65px;
+    width: 75%;
+    border: solid black 2px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
     border-radius: 6px;
     background-color: transparent;
     outline: 0;
@@ -69,15 +73,32 @@ input {
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
+    background-color: rgb(200, 200, 200);
     
     &:focus {
-        border-color: white;
+        border-color: rgb(31, 45, 234);
     }
 }
 
 .errors {
-    color: white;
+    color: rgb(204, 31, 31);
     font-size: 18px;
     font-weight: 400;
     line-height: 24px;
+    }
+
+.formbutton {
+        /* outline: 0;
+        border: 0;
+        width: 100px;
+        height: 47px;
+        background: rgb(94, 89, 89);
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+            
+        margin-left: 10px;
+        margin-top: 10px;
+        cursor: pointer; */
     }

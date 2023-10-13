@@ -19,8 +19,8 @@ const Showcase = ({data,transition}) => {
                 <div className="meta-content">
                      <h3>{project.name}</h3>
                      <div className="go-to-cta">
-                        <span className="text">Project Details</span>
-                        <a href={`${"https://ofi5.github.io/password_generator.github.io/"}`} target={"_blank"}><button style={{color:"red"}}><Arrow/></button></a>
+                        {/* <span className="text">Project Details</span> */}
+                        <button class="showcase-button" style={{color:"red"}}><a href={`${project.lnk}`} target={"_blank"}>Visit</a></button>
                      </div>
                 </div>
                 <img className="showcaseImg"src={project.media.thumbnail}/>

@@ -22,8 +22,8 @@
         transition: all ease 500ms;
     }
     .icon{
-        width: 21px;
-        height: 21px;
+        width: 20px;
+        height: 20px;
         background-color: rgb(16, 3, 135);
         border-radius: 41px;
         display: flex;
@@ -50,11 +50,57 @@
         .text,
         .arrow-icon,.icon{
         
-            background: rgb(24, 2, 166);
-            color: rgb(251, 251, 251);
-            border-radius: 30px;
-            padding: 4px;
+            /* background: rgb(24, 2, 166); */
+            /* color: rgb(251, 251, 251); */
+            /* border-radius: 30px; */
+            /* padding: 1px; */
         }
     } 
 
 }
+
+/* button{
+    
+    /* outline: 0;
+    border: 0; */
+    /* width: fit-content; */
+    /* padding: 0 15px; */
+    /* height: 47px;
+    background: rgb(165, 139, 265);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    z-index: 1;   
+    overflow: hidden;
+    margin: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all ease 500ms;
+    color: rgb(0, 0, 0); */
+
+    &:before {
+        /* content:"";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        color: black;
+        z-index: 0;
+        transform:translateX(-100%);
+        transition: all 500ms cubic-bezier(0.55,0.055,0.675,0.19); */
+
+
+    }
+   
+    /* &:hover {
+        &:before {
+            transform: translateX(0); */
+            
+        /* }
+
+}
+} */ 

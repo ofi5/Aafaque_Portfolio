@@ -16,11 +16,11 @@ const Blogs = () => {
             >
                 <div className="blogs-content-wrapper">
                   <BlogCard
-                    user="aafi"
-                    date="12 march"
+                    user="Aafaque Rasheed"
+                    date="12 March"
                     image={Blog1}
-                    title="hello"
-                    description="the qwfdsjkdfsklfjdfkls"/>
+                    title="Chelsea Soccer Club"
+                    description="The top 5 players at Chelsea "/>
                   <BlogCard
                     user="aafi"
                     date="12 march"

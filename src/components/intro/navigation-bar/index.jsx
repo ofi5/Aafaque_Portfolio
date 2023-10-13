@@ -14,7 +14,7 @@ const Navigation = () => {
         <div className="navigation">
             <span className="navigation-item" onClick={()=>scrollToSection("skills")}>Skills</span>
             <span className="navigation-item" onClick={()=>scrollToSection("portfolio")}>Portfolio</span>
-            <span className="navigation-item" onClick={()=>scrollToSection("blogs")}>Blogs</span>
+            {/* <span className="navigation-item" onClick={()=>scrollToSection("blogs")}>Blogs</span> */}
             <CallToAction text = "contact me" action={()=>scrollToSection("contact")}/>
 
         </div>
