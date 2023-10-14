@@ -44,12 +44,9 @@ const Footer = () => {
                     >
                         Portfolio
                     </li>
-                    <li
-                        className="footer-menu-item"
-                        onClick={() => scrollToSection("blogs")}
-                    >
-                        Blog & Articles
-                    </li>
+                    
+                    
+                    
                     <li
                         className="footer-menu-item"
                         onClick={() => scrollToSection("contact")}

@@ -82,7 +82,7 @@ const Form = () => {
                         {...register("phone_number", {
                             required: "Phone number is required",
                             minLength: {
-                                value: 8,
+                                value: 1,
                                 message: "Phone number is not valid",
                             },
                         })}
@@ -100,8 +100,8 @@ const Form = () => {
                         {...register("subject", {
                             required: "Subject is required",
                             minLength: {
-                                value: 10,
-                                message: "Minimum 10 characters required",
+                                value: 1,
+                                message: "Minimum 1 characters required",
                             },
                         })}
                     />
@@ -118,11 +118,11 @@ const Form = () => {
                         {...register("message", {
                             required: "Message is required",
                             minLength: {
-                                value: 20,
+                                value: 1,
                                 message: "Minimum 20 characters required",
                             },
                             maxLength: {
-                                value: 500,
+                                value: 1000,
                                 message: "Maximum 500 characters allowed",
                             },
                         })}

@@ -13,6 +13,8 @@
     position: relative;
     overflow: hidden;
     margin: 5px;
+    border: solid 2px transparent;
+    z-index: 0;
     
     .text,
     .arrow-icon,
