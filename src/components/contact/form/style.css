@@ -1,4 +1,16 @@
 .query-form {
+    @media only screen and (max-width: 475px) {
+        /* border: solid green 2px; */
+        font-size: 10px;
+        width: 100%;
+        /* padding: 3px; */
+        height: 100%;
+        margin: auto;
+        justify-content: space-between;
+        border-radius: 0%;
+        
+    
+    }
     color: rgb(104, 104, 104);
     width: 100%;
     margin-left: 20px;
@@ -6,6 +18,16 @@
     border-radius: 16px;
     
     .input-field {
+        @media only screen and (max-width: 475px) {
+            /* border: solid rgb(210, 163, 163) 2px; */
+            font-size: 12px;
+            width: 100%;
+            padding: 0;
+            margin: auto;
+            justify-content: space-between;
+            
+        
+        }
         width: 50%;
         margin: 10px;
         border-radius: 16px;
@@ -21,6 +43,17 @@
 }
 
 form {
+    @media only screen and (max-width: 475px) {
+        /* border: solid green 2px; */
+        font-size: 10px;
+        width: 80%;
+        border-radius: 0%;
+        padding: 0;
+        margin: auto;
+        justify-content: space-between;
+        
+    
+    }
     display: flex;
     flex-flow: row wrap;
     margin: 10px;
@@ -32,6 +65,17 @@ form {
 
 
 input {
+    @media only screen and (max-width: 475px) {
+        border: solid rgb(62, 78, 156) 2px;
+        font-size: 10px;
+        width: 100%;
+        height: 120%;
+        padding: 0;
+        margin: auto;
+        justify-content: space-between;
+        
+    
+    }
     width: 85%;
     height: 57px;
     /* border: solid 2px grey; */
@@ -56,6 +100,17 @@ input {
 }
 
 .textarea {
+    @media only screen and (max-width: 475px) {
+        /* border: solid green 2px; */
+        font-size: 10px;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: auto;
+        justify-content: space-between;
+        
+    
+    }
     
     
     height: 65px;

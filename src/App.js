@@ -22,11 +22,11 @@ const App = () => {
   return (
     <div>
       <Intro/>
-      <Skills/>
-      <Portfolio/>
+      <Skills/> 
+       <Portfolio/>
       
       <Contact/>
-      <Footer/>
+      <Footer/>  
       </div>
   )
 }

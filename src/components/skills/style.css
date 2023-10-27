@@ -1,4 +1,9 @@
 .skills-content-wrapper{
+    @media only screen and (max-width: 475px) {
+        /* border: solid green 2px; */
+        font-size: 10px;
+        display: inline-block;
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,6 +17,14 @@
         align-items: center;
         
         justify-content: flex-start;
+        @media only screen and (max-width: 475px) {
+            /* border: solid green 2px; */
+            font-size: 10px;
+            width: 70%;
+            margin: auto;
+            
+        }
+        
         
       
 
@@ -21,6 +34,14 @@
         width: 100%;
         max-width: 453px;
         display: block;
+        @media only screen and (max-width: 475px) {
+            /* border: solid green 2px; */
+            font-size: 10px;
+            width: 100%;
+            
+        display: block;
+        }
+        
         /* border: solid 2px red; */
     
     }

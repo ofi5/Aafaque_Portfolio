@@ -4,6 +4,17 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
+    @media only screen and (max-width: 475px) {
+        /* border: solid red 2px; */
+        font-size: 11px;
+        justify-content: space-around;
+        width: 65%;
+        margin: auto;
+        padding: 4px;
+        
+      
+    }
+    
 
     .app-logo {
         width: 143px;
@@ -47,5 +58,10 @@
     font-weight: 400;
     color: rgb(255, 255, 255);
     font-style: italic;
+    @media only screen and (max-width: 475px) {
+        padding-top: 4%;
+        font-size: 15px;
+        padding-left: 20px;
+    }
     
 }

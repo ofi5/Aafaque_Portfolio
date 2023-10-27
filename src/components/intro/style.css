@@ -1,7 +1,18 @@
 .Intro-section {
 
+
+    @media (max-width: 475px) {
+        
+            
+            /* border: solid red 2px; */
+            
+        
+    
+    }
+
+
     width: 100%;
-    /* border: solid 2px yellow; */
+    /* border: solid 2px yellow;  */
     
     height: 100vh;
     overflow: hidden;
@@ -46,3 +57,5 @@
     }
 
 }
+
+
