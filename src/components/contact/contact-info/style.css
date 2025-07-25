@@ -1,37 +1,74 @@
-.contact-info-box{
-    @media only screen and (max-width: 475px) {
-        /* border: solid green 2px; */
-        font-size: 10px;
-        width: 100%;
-       
-        /* padding: 18px; */
-
-        margin: auto;
-        justify-content: space-between;
-        border-radius: 0%;
-        
-    
-    }
+.contact-info-box {
     background-color: black;
-    width: 355px;
+    width: 100%;
+    max-width: 355px;
     padding: 30px;
     border-radius: 6px;
     color: grey;
-    h4{
+    
+    h4 {
         line-height: 34px;
         margin-bottom: 20px;
+        font-size: clamp(18px, 3vw, 24px);
     }
-    .contact-option{
+    
+    .contact-option {
         display: flex;
         align-items: center;
         margin-top: 15px;
-        svg{
+        
+        svg {
             color: yellow;
             font-size: 16px;
+            flex-shrink: 0;
         }
-        .text{
+        
+        .text {
             color: white;
             margin-left: 10px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+    }
+    
+    /* Tablet responsive */
+    @media (max-width: 768px) {
+        padding: 25px;
+        max-width: 100%;
+        
+        h4 {
+            margin-bottom: 15px;
+        }
+        
+        .contact-option {
+            margin-top: 12px;
+            
+            .text {
+                font-size: 15px;
+            }
+        }
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 475px) {
+        padding: 20px;
+        border-radius: 4px;
+        
+        h4 {
+            margin-bottom: 12px;
+        }
+        
+        .contact-option {
+            margin-top: 10px;
+            
+            svg {
+                font-size: 14px;
+            }
+            
+            .text {
+                font-size: 14px;
+                margin-left: 8px;
+            }
         }
     }
 }

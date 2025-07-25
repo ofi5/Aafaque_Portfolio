@@ -1,15 +1,16 @@
-.portfolio-content-wrapper{
+.portfolio-content-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* border: solid red 5px; */
-    @media only screen and (max-width: 475px) {
-        /* border: solid green 2px; */
-        font-size: 10px;
-        /* width: 100vw; */
-        
-    display: block;
-    }
-
+    padding: 60px 20px;
     
+    /* Tablet responsive */
+    @media (max-width: 768px) {
+        padding: 40px 15px;
+    }
+    
+    /* Mobile responsive */
+    @media (max-width: 475px) {
+        padding: 30px 10px;
+    }
 }

@@ -4,64 +4,400 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 40px;
-    @media only screen and (max-width: 475px) {
-        /* border: solid red 2px; */
-        font-size: 11px;
-        justify-content: space-around;
-        width: 65%;
-        margin: auto;
-        padding: 4px;
-        
-      
-    }
-    
+    padding: 0 20px;
+    position: relative;
+    z-index: 1000;
+    box-sizing: border-box;
+}
 
-    .app-logo {
-        width: 143px;
-        
-        img {
-        display: block;
-        width: 100%;
-        }
+/* Desktop Navigation */
+.desktop-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 60px; /* Increased gap between brand and navigation */
     
+    .nav-brand {
+        flex-shrink: 0;
+        
+        .myName {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            font-style: normal;
+            text-align: left;
+            margin: 0;
+            box-sizing: border-box;
+            transition: color 0.3s ease;
+            letter-spacing: -0.5px;
+            animation: slideInFromLeft 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-100px);
+            
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
     }
 
     .navigation {
         display: flex;
         align-items: center;
+        gap: 15px; /* Equal spacing between all buttons */
+        box-sizing: border-box;
+        flex-grow: 1;
+        justify-content: flex-end;
+        
         .navigation-item {
-            color: antiquewhite;
-            
-            margin-left: 20px;
-            padding: 5px;
-            box-shadow: inset 0 0 0 0 antiquewhite;
-            transition: color 0.9s ease-in-out, box-shadow 0.9s ease-in-out;
+            font-family: 'Montserrat', sans-serif;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            border-radius: 10%;
+            font-size: clamp(12px, 1.5vw, 14px);
+            font-weight: 400;
+            font-style: normal;
+            white-space: nowrap;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+                z-index: 0;
+                transform: skewX(-15deg);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+                z-index: 0;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
 
             &:hover {
-                box-shadow: inset 200px 0 0 0 rgb(255, 255, 255);
-                color:rgb(18, 8, 128);
+                background: rgba(255, 255, 255, 0.15);
+                color: rgb(255, 255, 255);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                border-color: rgba(255, 255, 255, 0.4);
+                
+                &:before {
+                    left: 100%;
+                }
+                
+                &:after {
+                    opacity: 1;
+                }
+            }
+            
+            &:focus {
+                outline: 2px solid rgba(255, 255, 255, 0.5);
+                outline-offset: 2px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), 0 0 0 4px rgba(255, 255, 255, 0.1);
+            }
+            
+            &.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: rgb(255, 255, 255);
+                border-color: rgba(255, 255, 255, 0.4);
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+                font-weight: 400;
+            }
+        }
+        
+        .nav-cta {
+            margin-left: 0; /* No extra margin since we're using gap */
+            box-sizing: border-box;
+        }
+    }
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    
+    .nav-brand {
+        .myName {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(20px, 5vw, 32px);
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            font-style: normal;
+            box-sizing: border-box;
+            transition: color 0.3s ease;
+            letter-spacing: -0.5px;
+            animation: slideInFromLeft 1.5s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-100px);
+            
+            &:hover {
+                color: rgba(255, 255, 255, 0.8);
             }
         }
     }
-
-    .call-to-action {
-        margin-left: 25px;
-    }
-
-
-}
-
-.myName{
-    font-size: 58px ;
-    font-weight: 400;
-    color: rgb(255, 255, 255);
-    font-style: italic;
-    @media only screen and (max-width: 475px) {
-        padding-top: 4%;
-        font-size: 15px;
-        padding-left: 20px;
+    
+    .burger-menu {
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        z-index: 1001;
+        background: none;
+        border: none;
+        box-sizing: border-box;
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        &:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.5);
+            outline-offset: 2px;
+        }
+        
+        .burger-icon {
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            
+            &.fa-times {
+                transform: rotate(180deg);
+            }
+        }
     }
     
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        box-sizing: border-box;
+        
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+            
+            .mobile-nav-item {
+                color: white;
+                font-size: 24px;
+                font-weight: 500;
+                cursor: pointer;
+                padding: 15px 30px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                text-align: center;
+                min-width: 200px;
+                position: relative;
+                overflow: hidden;
+                background: none;
+                border: none;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                box-sizing: border-box;
+                font-family: 'Montserrat', sans-serif;
+                
+                .nav-icon {
+                    font-size: 20px;
+                    transition: transform 0.3s ease;
+                }
+                
+                .nav-text {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+                    transition: left 0.5s ease;
+                }
+                
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transform: translateY(-2px);
+                    
+                    .nav-icon {
+                        transform: scale(1.1);
+                    }
+                    
+                    &::before {
+                        left: 100%;
+                    }
+                }
+                
+                &:active {
+                    transform: translateY(0);
+                }
+                
+                &:focus {
+                    outline: 2px solid rgba(255, 255, 255, 0.5);
+                    outline-offset: 2px;
+                }
+                
+                &.active {
+                    background-color: rgba(255, 255, 255, 0.15);
+                    color: rgb(255, 255, 255);
+                    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.3);
+                    
+                    .nav-icon {
+                        color: rgb(165, 139, 236);
+                    }
+                }
+            }
+        }
+        
+        &.active .mobile-menu-content {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Keyframe animation for name slide-in */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+    .top-navigation-bar {
+        margin-top: 30px;
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
+    
+    .desktop-nav {
+        gap: 40px;
+        
+        .nav-brand .myName {
+            margin-top: 15px;
+        }
+        
+        .navigation {
+            gap: 12px;
+            
+            .navigation-item {
+                padding: 8px 14px;
+                font-size: clamp(11px, 1.5vw, 13px);
+                height: 35px;
+            }
+        }
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 475px) {
+    .top-navigation-bar {
+        margin-top: 20px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+    .desktop-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        display: flex;
+        
+        .nav-brand .myName {
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        
+        .burger-menu {
+            padding: 6px;
+            
+            .burger-icon {
+                font-size: 20px;
+            }
+        }
+        
+        .mobile-menu-overlay {
+            .mobile-menu-content {
+                gap: 25px;
+                
+                .mobile-nav-item {
+                    font-size: 20px;
+                    padding: 12px 25px;
+                    min-width: 180px;
+                    
+                    .nav-icon {
+                        font-size: 18px;
+                    }
+                    
+                    .nav-text {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
 }

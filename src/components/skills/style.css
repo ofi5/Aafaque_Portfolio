@@ -1,92 +1,141 @@
-.skills-content-wrapper{
-    @media only screen and (max-width: 475px) {
-        /* border: solid green 2px; */
-        font-size: 10px;
-        display: inline-block;
-    }
+.skills-content-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border: solid 2px green; */
     width: 100%;
+    padding: 60px 20px;
+    gap: 40px;
+    overflow: hidden;
+    box-sizing: border-box;
 
     .left-col {
-        
         width: 30%;
         display: flex;
         align-items: center;
-        
         justify-content: flex-start;
-        @media only screen and (max-width: 475px) {
-            /* border: solid green 2px; */
-            font-size: 10px;
-            width: 70%;
-            margin: auto;
-            
-        }
-        
-        
-      
+        overflow: hidden;
+        box-sizing: border-box;
 
-    }
-
-    #jsImage {
-        width: 100%;
-        max-width: 453px;
-        display: block;
-        @media only screen and (max-width: 475px) {
-            /* border: solid green 2px; */
-            font-size: 10px;
+        #jsImage {
             width: 100%;
-            
-        display: block;
+            max-width: 453px;
+            display: block;
+            height: auto;
+            box-sizing: border-box;
         }
-        
-        /* border: solid 2px red; */
-    
     }
 
     .right-col {
-        /* border: solid 2px blue; */
         width: 60%;
         color: rgb(255, 255, 255);
-        /* margin-left: 70px; */
         text-align: center;
         margin: auto;
         align-items: center;
         justify-content: center;
-
-        
+        overflow: hidden;
+        box-sizing: border-box;
     }
 }
 
-h1{
+h1 {
     margin-bottom: 30px;
+    font-size: clamp(24px, 4vw, 36px);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
-p{
-    font: 400 28px;
-    line-height: 24px;
+
+p {
+    font-size: clamp(16px, 2.5vw, 28px);
+    line-height: 1.5;
     margin-bottom: 15px;
-    /* border: solid 2px red; */
-    
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
-/* .resbutton{
-    margin: auto;
-    /* border: solid 2px red; */
-    /* align-items: center; */
-    /* text-align: center; */
-    /* color: purple; */
-
-
-
-a{
+a {
     color: black;
+    box-sizing: border-box;
 }
 
-.container{
-    /* border: solid 2px green; */
+.container {
     text-align: center;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Tablet responsive */
+@media (max-width: 768px) {
+    .skills-content-wrapper {
+        padding: 40px 15px;
+        gap: 30px;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        
+        .left-col {
+            width: 100%;
+            max-width: 400px;
+            justify-content: center;
+            box-sizing: border-box;
+            
+            #jsImage {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        
+        .right-col {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+    
+    p {
+        margin-bottom: 12px;
+        box-sizing: border-box;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 475px) {
+    .skills-content-wrapper {
+        padding: 30px 10px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        
+        .left-col {
+            max-width: 300px;
+            width: 100%;
+            box-sizing: border-box;
+            
+            #jsImage {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        
+        .right-col {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    
+    h1 {
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+    
+    p {
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
 }

@@ -1,25 +1,13 @@
 .Intro-section {
-
-
-    @media (max-width: 475px) {
-        
-            
-            /* border: solid red 2px; */
-            
-        
-    
-    }
-
-
     width: 100%;
-    /* border: solid 2px yellow;  */
-    
     height: 100vh;
     overflow: hidden;
     background: linear-gradient(121deg, #231e7a 9%, #000000 41%, #4b07c2 80%);
     position: relative;
     display: flex;
     justify-content: center;
+    box-sizing: border-box;
+    
     .vector-bg {
         width: 100%;
         height: 100vh;
@@ -30,14 +18,18 @@
         background-repeat: no-repeat;
         z-index: 0;
         opacity: 0.4;
+        box-sizing: border-box;
     }
+    
     .cloud {
         position: absolute;
         bottom: 0px;
         left: 0;
         width: 100%;
         z-index: 2;
+        box-sizing: border-box;
     }
+    
     .cloud-soft {
         position: absolute;
         bottom: 0;
@@ -45,17 +37,56 @@
         width: 100%;
         z-index: 1;
         mix-blend-mode: soft-light;
+        box-sizing: border-box;
     }
+    
     .content {
-        /* border: solid 2px green; */
-        width: 1200px;
-        padding:0 20px;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
         position: relative;
         display: flex;
         flex-direction: column;
-
+        z-index: 3;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
+    /* Tablet responsive */
+    @media (max-width: 768px) {
+        .content {
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 475px) {
+        height: 100vh;
+        min-height: 600px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        
+        .content {
+            padding: 0 10px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .cloud,
+        .cloud-soft {
+            bottom: -50px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .vector-bg {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
 }
 
 
