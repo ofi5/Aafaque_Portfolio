@@ -8,6 +8,11 @@
     position: relative;
     z-index: 1000;
     box-sizing: border-box;
+    min-width: 0; /* Prevent flex items from overflowing */
+    /* Ensure consistent positioning in production */
+    left: 0;
+    right: 0;
+    transform: none;
 }
 
 /* Desktop Navigation */
@@ -18,9 +23,14 @@
     justify-content: space-between;
     box-sizing: border-box;
     gap: 60px; /* Increased gap between brand and navigation */
+    min-width: 0; /* Prevent flex items from overflowing */
+    /* Ensure consistent layout in production */
+    flex-wrap: nowrap;
+    overflow: visible;
     
     .nav-brand {
         flex-shrink: 0;
+        min-width: 0; /* Prevent text overflow */
         
         .myName {
             font-family: 'Montserrat', sans-serif;
@@ -50,6 +60,11 @@
         box-sizing: border-box;
         flex-grow: 1;
         justify-content: flex-end;
+        min-width: 0; /* Prevent flex items from overflowing */
+        flex-shrink: 1; /* Allow navigation to shrink if needed */
+        /* Ensure consistent layout in production */
+        flex-wrap: nowrap;
+        overflow: visible;
         
         .navigation-item {
             font-family: 'Montserrat', sans-serif;
@@ -76,6 +91,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0; /* Prevent navigation items from shrinking */
+            min-width: 0; /* Allow text to wrap if needed */
 
             &:before {
                 content: "";
@@ -137,6 +154,7 @@
         .nav-cta {
             margin-left: 0; /* No extra margin since we're using gap */
             box-sizing: border-box;
+            flex-shrink: 0; /* Prevent CTA from shrinking */
         }
     }
 }
@@ -149,6 +167,9 @@
     justify-content: space-between;
     position: relative;
     box-sizing: border-box;
+    /* Ensure consistent layout in production */
+    flex-wrap: nowrap;
+    overflow: visible;
     
     .nav-brand {
         .myName {
@@ -331,22 +352,27 @@
         margin-top: 30px;
         padding: 0 15px;
         box-sizing: border-box;
+        min-width: 0;
     }
     
     .desktop-nav {
-        gap: 40px;
+        gap: 30px; /* Reduced gap for smaller screens */
+        min-width: 0;
         
         .nav-brand .myName {
             margin-top: 15px;
+            font-size: clamp(24px, 4vw, 36px); /* Adjusted font size */
         }
         
         .navigation {
-            gap: 12px;
+            gap: 10px; /* Reduced gap between items */
+            min-width: 0;
             
             .navigation-item {
-                padding: 8px 14px;
-                font-size: clamp(11px, 1.5vw, 13px);
+                padding: 8px 12px;
+                font-size: clamp(10px, 1.2vw, 12px);
                 height: 35px;
+                min-width: 0;
             }
         }
     }
@@ -358,6 +384,7 @@
         margin-top: 20px;
         padding: 0 10px;
         box-sizing: border-box;
+        min-width: 0;
     }
     
     .desktop-nav {
@@ -366,14 +393,17 @@
     
     .mobile-nav {
         display: flex;
+        min-width: 0;
         
         .nav-brand .myName {
             margin-top: 10px;
             padding: 0 10px;
+            font-size: clamp(18px, 4vw, 28px); /* Adjusted font size */
         }
         
         .burger-menu {
             padding: 6px;
+            flex-shrink: 0;
             
             .burger-icon {
                 font-size: 20px;
