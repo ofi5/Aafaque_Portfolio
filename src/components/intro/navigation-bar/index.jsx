@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import CallToAction from '../../shared/CallToAction'
 import { scrollToSection } from '../../utils/helpers'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import "./style.css"
@@ -9,7 +8,13 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState('skills')
 
   const handleResumeClick = () => {
-    window.open('/resume', '_blank')
+    const link = document.createElement('a')
+    link.href = require('../../../images/Resume_AafaqueRasheed.pdf')
+    link.download = "Aafaque's Resume.pdf"
+    link.style.display = 'none'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
   }
 
   const handleNavClick = (section) => {
@@ -42,7 +47,8 @@ const Navigation = () => {
   const navigationItems = [
     { id: 'skills', label: 'Skills', section: 'skills' },
     { id: 'portfolio', label: 'Portfolio', section: 'portfolio' },
-    { id: 'contact', label: 'Contact', section: 'contact' }
+    { id: 'contact', label: 'Contact', section: 'contact' },
+    { id: 'resume', label: 'Resume', action: handleResumeClick }
   ]
 
   return (
@@ -59,14 +65,11 @@ const Navigation = () => {
             <button
               key={item.id}
               className={`nav-link ${activeSection === item.section ? 'active' : ''}`}
-              onClick={() => handleNavClick(item.section)}
+              onClick={item.action ? item.action : () => handleNavClick(item.section)}
             >
               {item.label}
             </button>
           ))}
-        </div>
-        <div className="nav-cta">
-          <CallToAction text="resume" action={handleResumeClick} />
         </div>
       </div>
 
@@ -87,14 +90,11 @@ const Navigation = () => {
               <button
                 key={item.id}
                 className={`mobile-nav-link ${activeSection === item.section ? 'active' : ''}`}
-                onClick={() => handleNavClick(item.section)}
+                onClick={item.action ? item.action : () => handleNavClick(item.section)}
               >
                 {item.label}
               </button>
             ))}
-            <div className="mobile-cta">
-              <CallToAction text="resume" action={handleResumeClick} />
-            </div>
           </div>
         </div>
       )}
