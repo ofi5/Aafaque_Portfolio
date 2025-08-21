@@ -1,25 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import logo from '../../../images/logo.png'
 import CallToAction from '../../shared/CallToAction'
 import { scrollToSection } from '../../utils/helpers'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaCode, FaBriefcase, FaEnvelope } from 'react-icons/fa'
+
 import "./style.css"
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('skills')
+  const menuRef = useRef(null)
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   const handleResumeClick = () => {
+    // Open resume in new tab
     window.open('/resume', '_blank')
   }
 
   const handleNavClick = (section) => {
     scrollToSection(section)
     setActiveSection(section)
-    setIsMenuOpen(false)
+    setIsMenuOpen(false) // Close menu when item is clicked
   }
 
-  // Close menu on escape key
+  // Close menu when clicking outside
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    // Close menu on escape key
     const handleEscapeKey = (event) => {
       if (event.key === 'Escape') {
         setIsMenuOpen(false)
@@ -27,77 +42,98 @@ const Navigation = () => {
     }
 
     if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
       document.addEventListener('keydown', handleEscapeKey)
+      // Prevent body scroll when menu is open
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = 'unset'
     }
 
     return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
       document.removeEventListener('keydown', handleEscapeKey)
       document.body.style.overflow = 'unset'
     }
   }, [isMenuOpen])
 
   const navigationItems = [
-    { id: 'skills', label: 'Skills', section: 'skills' },
-    { id: 'portfolio', label: 'Portfolio', section: 'portfolio' },
-    { id: 'contact', label: 'Contact', section: 'contact' }
+    { id: 'skills', label: 'Skills', icon: <FaCode />, section: 'skills' },
+    { id: 'portfolio', label: 'Portfolio', icon: <FaBriefcase />, section: 'portfolio' },
+    { id: 'contact', label: 'Contact', icon: <FaEnvelope />, section: 'contact' }
   ]
 
   return (
-    <nav className="navbar">
-      {/* Brand */}
-      <div className="navbar-brand">
-        <h1 className="brand-name">Aafaque</h1>
-      </div>
-
+    <nav className="top-navigation-bar" role="navigation" aria-label="Main navigation">
       {/* Desktop Navigation */}
-      <div className="navbar-desktop">
-        <div className="nav-links">
+      <div className="desktop-nav">
+        <div className="nav-brand">
+          <p className='myName'>Aafaque</p>
+        </div>
+        
+        <div className="navigation" role="menubar">
           {navigationItems.map((item) => (
-            <button
+            <span 
               key={item.id}
-              className={`nav-link ${activeSection === item.section ? 'active' : ''}`}
+              className={`navigation-item ${activeSection === item.section ? 'active' : ''}`}
               onClick={() => handleNavClick(item.section)}
+              role="menuitem"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  handleNavClick(item.section)
+                }
+              }}
             >
               {item.label}
-            </button>
+            </span>
           ))}
-        </div>
-        <div className="nav-cta">
-          <CallToAction text="resume" action={handleResumeClick} />
+          <div className="nav-cta">
+            <CallToAction text="resume" action={() => handleResumeClick()}/>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      <button 
-        className="mobile-menu-btn"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-      >
-        {isMenuOpen ? <FaTimes /> : <FaBars />}
-      </button>
+      {/* Mobile Navigation */}
+      <div className="mobile-nav" ref={menuRef}>
+        <div className="nav-brand">
+          <p className='myName'>Aafaque</p>
+        </div>
+        
+        <button 
+          className="burger-menu" 
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+        >
+          {isMenuOpen ? <FaTimes className="burger-icon" /> : <FaBars className="burger-icon" />}
+        </button>
 
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className="mobile-menu-overlay" onClick={() => setIsMenuOpen(false)}>
-          <div className="mobile-menu-content" onClick={(e) => e.stopPropagation()}>
+        {/* Mobile Menu Overlay */}
+        <div 
+          id="mobile-menu"
+          className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}
+          role="dialog"
+          aria-modal="true"
+          aria-hidden={!isMenuOpen}
+        >
+          <div className="mobile-menu-content">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
-                className={`mobile-nav-link ${activeSection === item.section ? 'active' : ''}`}
+                className={`mobile-nav-item ${activeSection === item.section ? 'active' : ''}`}
                 onClick={() => handleNavClick(item.section)}
+                aria-label={`Navigate to ${item.label} section`}
               >
-                {item.label}
+                <span className="nav-icon">{item.icon}</span>
+                <span className="nav-text">{item.label}</span>
               </button>
             ))}
-            <div className="mobile-cta">
-              <CallToAction text="resume" action={handleResumeClick} />
-            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   )
 }

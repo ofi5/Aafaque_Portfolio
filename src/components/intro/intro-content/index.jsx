@@ -1,5 +1,5 @@
 import React from 'react'
-import girl from "../../../images/girl.png"
+import aafaquerasheed from "../../../images/aafaquerasheed.jpeg"
 import hand from "../../../images/hand.png";
 import utdsmall from "../../../images/utdsmall.png"
 
