@@ -9,7 +9,9 @@ import { BsAwardFill } from 'react-icons/bs';
 import { FaUser } from 'react-icons/fa';
 import { scrollToSection } from '../../utils/helpers';
 import utdLogo from '../../../images/utdLogo.webp'
+import fullstacklogo from '../../../images/fullstacklogo.webp'
 import mahe from '../../../images/portfolio/mahe.png'
+import genai from '../../../images/genai.png'
 
 const IntroContent = () => {
   return (
@@ -35,16 +37,16 @@ const IntroContent = () => {
               <div className="education-highlights">
                 <div className='highlights vertical'>
                   <div className="icon">
-                    <img src={utdsmall} alt="utdLogo" />
+                    <img src={fullstacklogo} alt="fullstacklogo" />
                   </div>
-                  <div className="text"> Masters in Information, Technology and Management</div>
+                  <div className="text"> Full Stack Developer</div>
                 </div>
                 <div className="highlights vertical">
                   <div className="icon">
-                  <img src={mahe} alt="mahe" />
+                  <img src={genai} alt="genai" />
                   </div>
                   <div className="text">
-                    <span>Bachelors of Technology in Civil Engineering</span>
+                    <span>Gen AI Engineer</span>
                   </div>
                 </div>
               </div>

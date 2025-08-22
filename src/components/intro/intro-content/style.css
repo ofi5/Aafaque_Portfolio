@@ -133,18 +133,20 @@
         box-sizing: border-box;
         
         .icon {
-            width: 55px;
-            height: 55px;
-            min-width: 55px;
+            width: 75px; /* Increased by 50% from 45px */
+            height: 75px;
+            min-width: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             background-color: yellow;
-            font-size: 24px;
-            color: rgb(0, 0, 0);
-            flex-shrink: 0;
-            box-sizing: border-box;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         
         .text {
@@ -159,7 +161,7 @@
             box-sizing: border-box;
             
             span {
-                font-size: 12px;
+                font-size: 15px;
                 font-weight: 600;
                 line-height: 16px;
                 display: block;
@@ -176,7 +178,7 @@
         padding: 25px;
         padding-top: 10px;
         margin-top: 0px;
-        font-style: italic;
+        /* font-style: italic; */
         color: rgb(255, 255, 255);
         overflow: hidden;
         word-wrap: break-word;
@@ -236,8 +238,8 @@
 
     /* Mobile responsive */
     @media (max-width: 475px) {
-        padding-top: 220px;
-        padding-bottom: 60px;
+        padding-top: 80px;
+        padding-bottom: 160px;
         width: 100%;
         box-sizing: border-box;
         
@@ -263,7 +265,13 @@
                     
                     .big-text {
                         font-size: clamp(20px, 8vw, 32px);
-                        padding-bottom: 20px;
+                        
+                        color: rgb(255, 255, 255);
+                        margin: auto;
+                        padding: auto;
+                        text-align: center;
+                        padding-bottom: 0px;
+                        
                     }
                 }
             }
@@ -287,28 +295,38 @@
             .education-highlights {
                 width: 100%;
                 max-width: 350px;
-                flex-direction: column;
-                gap: 15px;
+                flex-direction: row;
+                gap: 10px;
+                justify-content: center;
+                
             }
         }
 
         .highlights {
+            width: 55%;
+            max-width: 120px;
             .icon {
-                width: 40px;
-                height: 40px;
-                min-width: 40px;
-                font-size: 18px;
+                width: 55px;
+                height: 55px;
+                min-width: 55px;
+                font-size: 16px;
                 box-sizing: border-box;
+                border-radius: 50%;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: yellow;
             }
             
             .text {
-                font-size: 12px;
-                line-height: 16px;
+                font-size: 18px;
+                line-height: 26px;
                 box-sizing: border-box;
                 
                 span {
-                    font-size: 11px;
-                    line-height: 14px;
+                    font-size: 18px;
+                    line-height: 26px;
                     box-sizing: border-box;
                 }
             }
