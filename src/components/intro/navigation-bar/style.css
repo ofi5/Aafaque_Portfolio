@@ -19,7 +19,7 @@
 
 .brand-name {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(28px, 5vw, 48px);
+  font-size: clamp(28px, 5vw, 78px);
   font-weight: 600;
   color: white;
   margin: 0;
@@ -27,6 +27,7 @@
   animation: slideInFromLeft 1.5s ease-out forwards;
   opacity: 0;
   transform: translateX(-100px);
+  font-style: normal; /* Ensure no italic style */
 }
 
 .brand-name:hover {
