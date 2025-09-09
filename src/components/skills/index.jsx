@@ -32,9 +32,17 @@ const Skills = () => {
         
             <div className="right-col">
                 <h1>Skills</h1>
-                     <p>
-                        I have my learnings in coding languages like JavaScript, python HTML, CSS and FrameWorks React. View my resume for my entire skillset.
-                    </p>
+                    
+                    <h4>My current focus areas include:</h4>
+                    
+                        <ul>
+                            <li>🌐 Full-Stack Web & Mobile Development (Angular, React, Flutter, Node.js, NestJS, Flask, Express)</li>
+                            <li>☁️ Cloud & DevOps (AWS, CI/CD, Docker, Terraform)</li>
+                            <li>🤖 Machine Learning & GenAI (LangChain, LLMs, RAG, Prompt Engineering)</li>
+                            <li>📊 Data Engineering & Analytics (MongoDB, PostgreSQL, Big Data, Streamlit Dashboards)</li>
+                        </ul>
+                    
+                    <h4>I’m always eager to take on new challenges, open-source contributions, and collaborative projects where I can grow as a developer and deliver real-world impact.</h4>
                   
                 <div className='container'>{/* <CallToAction text="resume" icon = {<AiOutlineCloudDownload/>}/> */}
                 <button className='text'><a href={require("../../images/Resume_AafaqueRasheed.pdf")} download="Aafaque's Resume intern candidate">Resume</a></button>

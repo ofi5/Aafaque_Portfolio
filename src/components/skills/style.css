@@ -28,13 +28,25 @@
     .right-col {
         width: 60%;
         color: rgb(255, 255, 255);
-        text-align: center;
+        text-align: left;
         margin: auto;
         align-items: center;
         justify-content: center;
         overflow: hidden;
         box-sizing: border-box;
     }
+}
+
+/* Left-align the list while keeping other text centered */
+.right-col ul {
+    text-align: left;
+    display: inline-block;
+    margin: 12px auto;
+    padding-left: 20px;
+}
+
+.right-col li {
+    margin-bottom: 8px;
 }
 
 h1 {
@@ -52,6 +64,13 @@ p {
     word-wrap: break-word;
     overflow-wrap: break-word;
     box-sizing: border-box;
+}
+
+/* Ensure h3 matches list color and add spacing above/below */
+.right-col h3 {
+    color: inherit;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 a {

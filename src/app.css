@@ -27,7 +27,7 @@ body {
     /* Prevent horizontal scrolling */
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    font-style: italic;
+    font-style: normal;
     /* Ensure no horizontal overflow */
     max-width: 100vw;
 }

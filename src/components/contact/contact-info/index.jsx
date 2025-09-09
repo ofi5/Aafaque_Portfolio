@@ -19,10 +19,10 @@ const ContactInfo = () => {
         </div>
         <br/>
         <div className="contact-option">
-        <MdEmail/>
-            <span className="text">axr230013@utdallas.edu<br/><br/><MdEmail/>aafaquerasheed@gmail.com</span>
-            
+            <MdEmail/>
+            <span className="text">axr230013@utdallas.edu, aafaquerasheed@gmail.com</span>
         </div>
+        
     </div>
   )
 }

@@ -4,8 +4,24 @@
     margin-top: 75px;
     padding: 60px 20px;
     gap: 40px;
+    align-items: stretch;
     overflow: hidden;
     box-sizing: border-box;
+    
+    /* ensure columns size nicely */
+    .contact-info-box {
+        flex: 0 0 355px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .query-form {
+        flex: 1 1 auto;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
     
     /* Tablet responsive */
     @media (max-width: 768px) {

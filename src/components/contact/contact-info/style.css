@@ -1,9 +1,11 @@
 .contact-info-box {
-    background-color: black;
+    background-color: #0b1e3a;
     width: 100%;
     max-width: 355px;
     padding: 30px;
-    border-radius: 6px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 123, 255, 0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     color: grey;
     
     h4 {
