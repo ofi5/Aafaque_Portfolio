@@ -1,138 +1,94 @@
 import React from "react";
-
-import { send } from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 import "./style.css";
 
 const Form = () => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        reset,
+        formState: { errors, isSubmitting },
     } = useForm();
 
-    const onSubmit = (data) => {
-        send(
-            "service_t3awz7j",
-            "template_ek40ldl",
-            data,
-            "wF04i0FgL3MgmQ8Sx"
-            )
-            .then((response) => {
-                console.log("SUCCESS!", response.status, response.text);
-                formSuccess();
-            })
-            .catch((err) => {
-                console.log("FAILED...", err);
-            });
-    };
-
-    const formSuccess = () => {
-        toast("Thanks for submitting your Query!");
-        document.getElementById("queryForm").reset();
+    const onSubmit = async (data) => {
+        try {
+            await emailjs.send(
+                "service_gce9xnr",
+                "template_ek40ldl",
+                data,
+                "wF04i0FgL3MgmQ8Sx"
+            );
+            toast.success("Message sent! I'll get back to you soon.");
+            reset();
+        } catch (err) {
+            const reason = err?.text || err?.message || "Unknown error";
+            toast.error(`Failed to send: ${reason}`);
+        }
     };
 
     return (
         <div className="query-form">
-            <ToastContainer />
-            <form
-                id="queryForm"
-                onSubmit={handleSubmit(onSubmit)}
-            >
-                <div className="input-field">
-                    <input
-                        type="text"
-                        name="from_name"
-                        placeholder="Name"
-                        {...register("from_name", {
-                            required: "Name is required",
-                        })}
-                    />
-                    {errors.from_name?.message && (
-                        <p className="error">{errors.from_name?.message}</p>
-                    )}
+            <ToastContainer position="bottom-right" theme="dark" />
+            <h3 className="form-title">Send a Message</h3>
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                <div className="form-row">
+                    <div className="input-field">
+                        <label>Name</label>
+                        <input
+                            type="text"
+                            placeholder="Your name"
+                            {...register("from_name", { required: "Name is required" })}
+                        />
+                        {errors.from_name && <p className="error">{errors.from_name.message}</p>}
+                    </div>
+
+                    <div className="input-field">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            placeholder="your@email.com"
+                            {...register("reply_to", {
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Invalid email address",
+                                },
+                            })}
+                        />
+                        {errors.reply_to && <p className="error">{errors.reply_to.message}</p>}
+                    </div>
                 </div>
 
                 <div className="input-field">
+                    <label>Subject</label>
                     <input
                         type="text"
-                        name="reply_to"
-                        placeholder="Email"
-                        {...register("reply_to", {
-                            required: "Email is required",
-                            pattern: {
-                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                message: "Invalid email address",
-                            },
-                        })}
+                        placeholder="What's this about?"
+                        {...register("subject", { required: "Subject is required" })}
                     />
-                    {errors.reply_to?.message && (
-                        <p className="error">{errors.reply_to?.message}</p>
-                    )}
+                    {errors.subject && <p className="error">{errors.subject.message}</p>}
                 </div>
 
                 <div className="input-field">
-                    <input
-                        type="text"
-                        name="phone_number"
-                        placeholder="Phone"
-                        {...register("phone_number", {
-                            required: "Phone number is required",
-                            minLength: {
-                                value: 1,
-                                message: "Phone number is not valid",
-                            },
-                        })}
-                    />
-                    {errors.phone_number?.message && (
-                        <p className="error">{errors.phone_number?.message}</p>
-                    )}
-                </div>
-
-                <div className="input-field">
-                    <input
-                        type="text"
-                        name="subject"
-                        placeholder="Subject"
-                        {...register("subject", {
-                            required: "Subject is required",
-                            minLength: {
-                                value: 1,
-                                message: "Minimum 1 characters required",
-                            },
-                        })}
-                    />
-                    {errors.subject?.message && (
-                        <p className="error">{errors.subject?.message}</p>
-                    )}
-                </div>
-
-                <div className="input-field full-width">
+                    <label>Message</label>
                     <textarea
                         className="textarea"
-                        name="message"
-                        placeholder="Your message"
+                        placeholder="Tell me about your project or opportunity..."
                         {...register("message", {
                             required: "Message is required",
-                            minLength: {
-                                value: 1,
-                                message: "Minimum 20 characters required",
-                            },
-                            maxLength: {
-                                value: 1000,
-                                message: "Maximum 500 characters allowed",
-                            },
+                            minLength: { value: 10, message: "Please write at least 10 characters" },
+                            maxLength: { value: 1000, message: "Maximum 1000 characters" },
                         })}
                     />
-                    {errors.message?.message && (
-                        <p className="error">{errors.message?.message}</p>
-                    )}
+                    {errors.message && <p className="error">{errors.message.message}</p>}
                 </div>
 
-                <button className="formbutton" type="submit">Submit</button>
+                <button className="formbutton" type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
             </form>
         </div>
     );

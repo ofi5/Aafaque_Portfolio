@@ -1,35 +1,40 @@
 .Intro-section {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
-    background: linear-gradient(121deg, #5fa4ff 80%, #ffffff 41%, #5fa4ff 80%);
     position: relative;
     display: flex;
     justify-content: center;
     box-sizing: border-box;
-    
+
+    /* Base navy + two subtle glow orbs */
+    background:
+        radial-gradient(ellipse at 72% 35%, rgba(103, 58, 183, 0.28) 0%, transparent 55%),
+        radial-gradient(ellipse at 18% 75%, rgba(79, 172, 254, 0.14) 0%, transparent 48%),
+        #041e47;
+
     .vector-bg {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: absolute;
+        inset: 0;
         background-image: url("../../images/stars.jpg");
         background-size: cover;
-        background-position: center center;
+        background-position: center;
         background-repeat: no-repeat;
         z-index: 1;
-        opacity: 0.1;
-        box-sizing: border-box;
+        opacity: 0.18;
     }
-    
+
     .cloud {
         position: absolute;
-        bottom: 0px;
+        bottom: -2px;
         left: 0;
         width: 100%;
         z-index: 2;
-        box-sizing: border-box;
+        opacity: 0.12;
     }
-    
+
     .cloud-soft {
         position: absolute;
         bottom: 0;
@@ -37,56 +42,30 @@
         width: 100%;
         z-index: 1;
         mix-blend-mode: soft-light;
-        box-sizing: border-box;
+        opacity: 0.25;
     }
-    
+
     .content {
         width: 100%;
         max-width: 1200px;
-        padding: 0 20px;
+        padding: 0 40px;
         position: relative;
         display: flex;
         flex-direction: column;
         z-index: 3;
-        overflow: hidden;
         box-sizing: border-box;
     }
 
-    /* Tablet responsive */
     @media (max-width: 768px) {
-        .content {
-            padding: 0 15px;
-            box-sizing: border-box;
-        }
+        .content { padding: 0 20px; }
     }
 
-    /* Mobile responsive */
     @media (max-width: 475px) {
-        height: 100vh;
-        min-height: 600px;
-        width: 100%;
-        overflow: hidden;
-        box-sizing: border-box;
-        
+        min-height: 100vh;
+
         .content {
-            padding: 0 10px;
-            width: 100%;
+            padding: 0 16px;
             max-width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .cloud,
-        .cloud-soft {
-            bottom: -50px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        
-        .vector-bg {
-            width: 100%;
-            box-sizing: border-box;
         }
     }
 }
-
-

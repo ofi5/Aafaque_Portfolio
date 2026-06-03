@@ -6,11 +6,10 @@
     display: flex;
     justify-content: center;
     &.dark{
-        background-color: black;
-
+        background-color: #041e47;
     }
     &.light{
-        background-color: rgb(35, 35, 36);
+        background-color: #062660;
     }
     .content{
         width: 1200px;

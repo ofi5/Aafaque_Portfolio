@@ -1,55 +1,70 @@
 import React from 'react'
-import {jsPDF} from "jspdf";
-
 import Section from "../shared/section";
-import {AiOutlineCloudDownload} from "react-icons/ai"
-
-import TechIcons from "../../images/tech-icons.png"
 import "./style.css"
-import CallToAction from '../shared/CallToAction';
-import chapter6 from '../../images/stars.jpg'
 
-
-// const doc = new jsPDF();
-
-// const downloadresume = () => {
-    
-// }
-
-// doc.text(chapter6);
-// doc.save("a4.pdf");
+const skillCategories = [
+    {
+        label: "Frontend",
+        icon: "🌐",
+        skills: ["React", "Angular", "Flutter", "TypeScript", "HTML/CSS"]
+    },
+    {
+        label: "Backend",
+        icon: "⚙️",
+        skills: ["Node.js", "NestJS", "Flask", "Express", "REST APIs"]
+    },
+    {
+        label: "Cloud & DevOps",
+        icon: "☁️",
+        skills: ["AWS", "Docker", "Terraform", "CI/CD", "Linux"]
+    },
+    {
+        label: "AI / ML",
+        icon: "🤖",
+        skills: ["LangChain", "LLMs", "RAG", "Prompt Engineering", "Hugging Face"]
+    },
+    {
+        label: "Data",
+        icon: "📊",
+        skills: ["PostgreSQL", "MongoDB", "Pandas", "Streamlit", "Big Data"]
+    },
+]
 
 const Skills = () => {
   return (
-    <Section 
-        background="dark"
-        id="skills"
-    >
+    <Section background="dark" id="skills">
         <div className="skills-content-wrapper">
-            <div className="left-col">
-                <img id="jsImage" src={TechIcons} alt="JS,React" />
-            </div>
-        
-            <div className="right-col">
+            <div className="skills-header">
                 <h1>Skills</h1>
-                    
-                    <h4>My current focus areas include:</h4>
-                    
-                        <ul>
-                            <li>🌐 Full-Stack Web & Mobile Development (Angular, React, Flutter, Node.js, NestJS, Flask, Express)</li>
-                            <li>☁️ Cloud & DevOps (AWS, CI/CD, Docker, Terraform)</li>
-                            <li>🤖 Machine Learning & GenAI (LangChain, LLMs, RAG, Prompt Engineering)</li>
-                            <li>📊 Data Engineering & Analytics (MongoDB, PostgreSQL, Big Data, Streamlit Dashboards)</li>
-                        </ul>
-                    
-                    <h4>I’m always eager to take on new challenges, open-source contributions, and collaborative projects where I can grow as a developer and deliver real-world impact.</h4>
-                  
-                <div className='container'>{/* <CallToAction text="resume" icon = {<AiOutlineCloudDownload/>}/> */}
-                <button className='text'><a href={require("../../images/Resume_AafaqueRasheed.pdf")} download="Aafaque's Resume intern candidate">Resume</a></button>
-                </div>
-             </div>
-        </div>   
+                <p className="skills-subtitle">
+                    Building across the full stack — from pixel-perfect UIs to scalable cloud infrastructure and LLM-powered systems.
+                </p>
+            </div>
 
+            <div className="skills-grid">
+                {skillCategories.map((cat) => (
+                    <div key={cat.label} className="skill-category">
+                        <div className="category-header">
+                            <span className="category-icon">{cat.icon}</span>
+                            <span className="category-label">{cat.label}</span>
+                        </div>
+                        <div className="skill-pills">
+                            {cat.skills.map(skill => (
+                                <span key={skill} className="skill-pill">{skill}</span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className="skills-footer">
+                <button>
+                    <a href={require("../../images/Resume_AafaqueRasheed.pdf")} download="Aafaque_Rasheed_Resume.pdf">
+                        Download Resume
+                    </a>
+                </button>
+            </div>
+        </div>
     </Section>
     )
 }

@@ -10,76 +10,54 @@ import Showcase from './showcase'
 
 const projectsData = [
     {
-        id: 2,
-        name: "Password Generator",
-        tags: ["web-app", "mobile-app"],
-        media: {
-            thumbnail: require("../../images/portfolio/pg.png"),
-        },
-        lnk:"https://ofi5.github.io/password_generator.github.io/"
+        id: 9,
+        name: "RAG Chatbot",
+        description: "Retrieval-Augmented Generation chatbot with custom knowledge bases and vector embeddings.",
+        tech: ["LangChain", "Python", "React", "FastAPI"],
+        tags: ["ai-ml", "full-stack"],
+        media: { thumbnail: null },
+        lnk: null,
+        gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
-        id: 1,
-        name: "Generic Pizza Website",
-        tags: ["web-page"],
-        media: {
-            thumbnail: require("../../images/portfolio/pizza.png"),
-        },
-        lnk:"https://ofi5.github.io/Pizza_Delivery_website.github.io/"
+        id: 10,
+        name: "ML Analytics Dashboard",
+        description: "Real-time analytics dashboard with ML-powered insights and interactive visualizations.",
+        tech: ["Streamlit", "Python", "PostgreSQL", "Pandas"],
+        tags: ["ai-ml", "full-stack"],
+        media: { thumbnail: null },
+        lnk: null,
+        gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
-        id: 3,
-        name: "Fun with Triangles",
-        tags: ["web-page"],
-        media: {
-            thumbnail: require("../../images/portfolio/triangle.png"),
-        },
-        lnk:"https://inspiring-cocada-d7b302.netlify.app/"
+        id: 11,
+        name: "Microservices API",
+        description: "Scalable REST API built with microservices architecture, containerized with Docker.",
+        tech: ["NestJS", "Node.js", "Docker", "PostgreSQL"],
+        tags: ["full-stack", "tools"],
+        media: { thumbnail: null },
+        lnk: null,
+        gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
     },
     {
-        id: 4,
-        name: "Unit Converter ",
-        tags: ["web-app", "mobile-app"],
-        media: {
-            thumbnail: require("../../images/portfolio/Converter.png"),
-        },
-        lnk:"https://ofi5.github.io/metric_unit_converter.github.io/"
+        id: 12,
+        name: "Cloud Data Pipeline",
+        description: "AWS-based event-driven data ingestion and processing pipeline with real-time monitoring.",
+        tech: ["AWS", "Python", "MongoDB", "Terraform"],
+        tags: ["full-stack", "ai-ml", "tools"],
+        media: { thumbnail: null },
+        lnk: null,
+        gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     },
     {
-        id: 5,
-        name: "Song Recommender",
-        tags: ["web-app", "web-page"],
-        media: {
-            thumbnail: require("../../images/portfolio/song.png"),
-        },
-        lnk:"https://0q8by5.csb.app/"
-    },
-    {
-        id: 6,
-        name: "Cash Register",
-        tags: ["product", "web-app", "mobile-app"],
-        media: {
-            thumbnail: require("../../images/portfolio/cash.png"),
-        },
-        lnk:"https://6328c915a42023113f60afbf--delightful-semifreddo-69ba95.netlify.app/"
-    },
-    {
-        id: 7,
-        name: "Stock Estimator",
-        tags: ["web-app"],
-        media: {
-            thumbnail: require("../../images/portfolio/stock.png"),
-        },
-        lnk:"https://6327babc5ddea727d5b61643--snazzy-unicorn-66dc54.netlify.app/"
-    },
-    {
-        id: 8,
-        name: "Football Quiz",
-        tags: ["web-app", "mobile-app", "web-page"],
-        media: {
-            thumbnail: require("../../images/portfolio/quiz.png"),
-        },
-        lnk:"https://replit.com/@ofi5/My-football-quiz?embed=1&ouput=1#index.js"
+        id: 13,
+        name: "LLM Prompt Studio",
+        description: "Interactive playground for testing, comparing, and optimizing LLM prompts side by side.",
+        tech: ["React", "Node.js", "OpenAI API", "LangChain"],
+        tags: ["ai-ml", "frontend", "tools"],
+        media: { thumbnail: null },
+        lnk: null,
+        gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
     },
 ]
 

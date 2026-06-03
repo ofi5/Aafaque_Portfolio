@@ -6,26 +6,11 @@ import './style.css'
 
 
 const filtersData = [
-    {
-        name: "All",
-        id: "all",
-    },
-    {
-        name: "Products",
-        id: "product",
-    },
-    {
-        name: "Web Pages",
-        id: "web-page",
-    },
-    {
-        name: "Web Apps",
-        id: "web-app",
-    },
-    {
-        name: "Mobile Apps",
-        id: "mobile-app",
-    },
+    { name: "All", id: "all" },
+    { name: "Full-Stack", id: "full-stack" },
+    { name: "AI / ML", id: "ai-ml" },
+    { name: "Frontend", id: "frontend" },
+    { name: "Tools", id: "tools" },
 ]
 
 const Filters = ({filterProjects}) => {

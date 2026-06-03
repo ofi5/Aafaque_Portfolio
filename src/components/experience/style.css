@@ -1,0 +1,209 @@
+.experience-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    color: white;
+
+    @media (max-width: 768px) { padding: 40px 15px; }
+    @media (max-width: 475px) { padding: 30px 10px; }
+}
+
+.exp-section-title {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    margin-bottom: 48px;
+    color: white;
+}
+
+/* ── Timeline ── */
+.timeline {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 56px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: rgba(165, 139, 236, 0.35);
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+
+    &:last-child { margin-bottom: 0; }
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -25px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgb(165, 139, 236);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(165, 139, 236, 0.5);
+    flex-shrink: 0;
+}
+
+/* ── Experience Card ── */
+.exp-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.exp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 20px;
+    flex-wrap: wrap;
+
+    @media (max-width: 475px) { padding: 14px 14px; gap: 8px; }
+}
+
+.exp-meta {
+    flex: 1;
+    min-width: 0;
+
+    .exp-company {
+        font-size: clamp(15px, 2.5vw, 18px);
+        font-weight: 600;
+        color: white;
+        margin: 0 0 3px;
+    }
+
+    .exp-location {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.exp-period {
+    font-size: 12px;
+    color: rgba(165, 139, 236, 0.9);
+    background: rgba(165, 139, 236, 0.12);
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* ── Expanded body ── */
+.exp-card-body {
+    padding: 0 20px 20px;
+
+    @media (max-width: 475px) { padding: 0 14px 16px; }
+}
+
+.role-block {
+    padding-top: 16px;
+
+    & + .role-block {
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        margin-top: 12px;
+    }
+}
+
+.role-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    .role-title {
+        font-size: clamp(13px, 2vw, 15px);
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .role-period {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.45);
+    }
+}
+
+.role-bullets {
+    margin: 0;
+    padding-left: 18px;
+    list-style: disc;
+
+    li {
+        font-size: clamp(12px, 1.8vw, 14px);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 6px;
+
+        &:last-child { margin-bottom: 0; }
+    }
+}
+
+/* ── Education & Certifications ── */
+.edu-cert-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.group-title {
+    font-size: clamp(14px, 2vw, 17px);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.edu-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+
+    .edu-icon {
+        font-size: 22px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+
+    .edu-degree {
+        font-size: clamp(13px, 2vw, 15px);
+        font-weight: 600;
+        color: white;
+        margin: 0 0 4px;
+    }
+
+    .edu-school {
+        font-size: 12px;
+        color: rgba(165, 139, 236, 0.85);
+        margin: 0 0 4px;
+    }
+
+    .edu-note {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        line-height: 1.5;
+    }
+}

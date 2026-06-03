@@ -45,6 +45,7 @@ const Navigation = () => {
   }, [isMenuOpen])
 
   const navigationItems = [
+    { id: 'experience', label: 'Experience', section: 'experience' },
     { id: 'skills', label: 'Skills', section: 'skills' },
     { id: 'portfolio', label: 'Portfolio', section: 'portfolio' },
     { id: 'contact', label: 'Contact', section: 'contact' },
