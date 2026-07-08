@@ -163,6 +163,8 @@ h3 {
 .go-to-cta {
     display: flex;
     align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 .showcase-button {
@@ -171,6 +173,8 @@ h3 {
     font-size: 13px;
     margin: 0;
     border-radius: 8px;
+    border: none;
+    cursor: pointer;
 
     a {
         color: white;
@@ -180,6 +184,14 @@ h3 {
             color: white;
         }
     }
+}
+
+.live-button {
+    background: linear-gradient(135deg, #673ab7, #a58bec);
+}
+
+.code-button {
+    background: #2b2b3a;
 }
 
 .coming-soon-badge {

@@ -34,11 +34,17 @@ const Showcase = ({data, transition}) => {
                         </div>
                     )}
                     <div className="go-to-cta">
-                        {project.lnk ? (
-                            <button className="showcase-button">
-                                <a href={project.lnk} target="_blank" rel="noreferrer">Visit</a>
+                        {project.live && (
+                            <button className="showcase-button live-button">
+                                <a href={project.live} target="_blank" rel="noreferrer">Live Demo</a>
                             </button>
-                        ) : (
+                        )}
+                        {project.lnk && (
+                            <button className="showcase-button code-button">
+                                <a href={project.lnk} target="_blank" rel="noreferrer">Code</a>
+                            </button>
+                        )}
+                        {!project.live && !project.lnk && (
                             <span className="coming-soon-badge">Coming Soon</span>
                         )}
                     </div>
